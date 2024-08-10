@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message Event {
+    message Payload {
+        string payload_type = 1;
+        string text = 2;
+    }
+
+    string from = 1;
+    Payload payload = 2;
+}
