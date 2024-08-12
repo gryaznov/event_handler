@@ -8,6 +8,7 @@ defmodule TcpPostman.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      {PartitionSupervisor, child_spec: DynamicSupervisor, name: TcpPostman.DynamicSupervisors},
       {TcpPostman, []}
     ]
 
