@@ -14,7 +14,7 @@ defmodule TcpPostman.Client do
   """
   @spec start_link(Request.t()) :: {:ok, pid()} | {:error, any()}
   def start_link(request) do
-    :gen_statem.start_link({:local, __MODULE__}, __MODULE__, request, [])
+    :gen_statem.start_link(__MODULE__, request, [])
   end
 
   # callbacks
